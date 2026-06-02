@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MaxSubArray{
     public static void main(String[] args) {
-        int[] nums={1};
+        int[] nums={-2,1,-3,4,-1,2,1,-5,4};
         int[] result = new int[0];
         int largestSum = Integer.MIN_VALUE, window = nums.length;
         //brute force
@@ -23,5 +23,13 @@ public class MaxSubArray{
         }
         System.out.println(largestSum);
         System.out.println(Arrays.toString(result));
+        //optimal approach using kadane's algorithm
+        int CurrentSum=nums[0], maxs=nums[0];
+        for(int i=1;i<nums.length;i++){
+            CurrentSum=Math.max(nums[i],CurrentSum+nums[i]);
+            maxs = Math.max(maxs,CurrentSum);
+        }
+        System.out.println(maxs);
+
     }
 }
