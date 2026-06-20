@@ -34,7 +34,7 @@ public class NextPermutation {
             }
             swapIndex=swapIndex(x,right,arr,swap);
 
-            swaps(pivotIndex,swapIndex);
+            swaps(arr,pivotIndex,swapIndex);
             // int temp=arr[pivotIndex];
             // arr[pivotIndex]=arr[swapIndex];
             // arr[swapIndex]=temp;
@@ -43,18 +43,15 @@ public class NextPermutation {
         left = (left==-1) ? 0 : x;
         right=arr.length-1;
         while(left<right){
-            // int temp=arr[left];
-            // arr[left]=arr[right];
-            // arr[right]=temp;
-            swaps(left,right);
+            swaps(arr, left,right);
             left++;right--;
         }
-        public void swaps(int i,int j){
-            int temp=arr[i];
-            arr[i]=arr[j];
-            arr[j]=temp;
-        }
         System.out.println(Arrays.toString(arr));
+    }
+    private static void swaps(int[] arr, int i, int j) {
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
     }
 
 }
