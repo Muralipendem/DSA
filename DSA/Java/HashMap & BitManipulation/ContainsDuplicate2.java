@@ -17,7 +17,6 @@ public class ContainsDuplicate2{
 
         //Using HashMap
         HashMap<Integer,ArrayList<Integer>> mp=new HashMap<>();
-        int count=0;
         boolean res=false;
         for(int i=0;i<nums.length;i++){
             if(!mp.containsKey(nums[i])){
